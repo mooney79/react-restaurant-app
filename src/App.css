@@ -1,4 +1,83 @@
-.App {
+
+.App{
+  box-sizing: border-box;
+  background-image: url("/src/images/backdrop.jpg");
+  /* background-color: rgb(48, 102, 150); */
+  width: 100vw;
+  height: 100vh;
+  /* object-fit: scale-down; */
+  background-size: cover; 
+}
+
+h1 {
+  background-color: rgb(255, 255, 255, 0.7);
+  border-bottom: solid black 2px;
+  padding-bottom: 16px;
+}
+
+h1::before{
+  content: '';
+  display: inline-block;
+  background-image: url("/src/images/logo.png");
+  background-size:contain;
+  width: 8vh;
+  height: 8vh;
+}
+
+.menu{
+  background-color: rgb(255, 255, 255, 0.7);
+  width: 40%;
+  margin-left: 10%;
+  padding: 8px;
+  
+}
+
+.order{
+  background-color: rgb(255, 255, 255, 0.9);
+  border: 1px solid black;
+  width: 33%;
+}
+
+li{
+  list-style: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-image: url("/src/images/filler-dots.png");
+  background-size: contain;
+  overflow: hidden;
+  background-repeat: repeat-x;
+  
+}
+
+.menu-line{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+span{
+  background-color: rgb(255, 255, 255, 0.2);
+}
+.line-end>span{
+  margin-right: 4px;
+}
+
+.line-end>button{
+  font-size: 6px;
+  font-weight: bold;
+  transform: translateY(-33%);
+}
+
+.nav-buttons{
+  width: 15%;
+  height: 8vh;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px;
+  background: none;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +114,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

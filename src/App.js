@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState/*, useEffect*/} from 'react'
+import MenuList from './components/MenuList';
+import MenuNav from './components/MenuNav';
+import Order from './components/Order';
+import {Menu} from './components/Menu';
+
+import './App.css';    
 
 function App() {
+  const [selection, setSelection] = useState('all');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <header>          
+          <h1>Mr. Fancy's Pizza</h1>          
+       </header>
+      
+       <MenuList Menu={Menu} selection={selection}/>
+       <MenuNav Menu={Menu} selection={selection} setSelection={setSelection}/>
+       <Order />
     </div>
   );
 }
@@ -26,37 +26,11 @@ export default App;
 
 /*
 
-Vic's Pizza
-A "client" has approached you and asked you to help them build a web presence. They are a local pizza parlor called Vic's Pizza. They don't know anything about the Internet, but they know they need a web page. They want an interactive menu that displays all of their food choices with prices, descriptions, etc. They also want the customer to be able to select menu items and create an order with a total price. When the user saves the order, it should create a new item on the backend so that the kitchen can process the order.
-
-Objectives
-Learning Objectives
-After completing this assignment, you should:
-
-Understand how to design and execute a front end application given ambiguous requirements by a client
-Understand how React works to create a dynamic frontend application
-Performance Objectives
-After completing this assignment, you should be able to:
-
-Create wireframes and a outline of objects needed as part of the planning process when making a complex front end application
-Execute client requirements to make a complete application
-Details
-Deliverables
-A repo containing a frontend project built with create-react-app
-I'm a Full Stack Developer Mode
-Tasks
 Getting Started (Thinking in React: Mock + Step 1)
- Setup the scaffolding using create-react-app
- Setup a mock of the page (include the different dynamic portions of the application)
- Produce static data for the menu items (sample JSON)
- Produce a functional static mockup
-Menu (Thinking in React: Step 2, 3, & 4)
- console.log the static JSON for the menu items
- Render a component for each menu item according to category
- Define a MenuItem component
- Define a MenuList component that calls MenuItem
- console.log the food object when I click on its price button
-Order view
+     Produce a functional static mockup 
+
+
+ Order view
  Define an Order component
  Render an instance of Order component
  Define an order object in your application state
@@ -68,9 +42,42 @@ Order view
  Render the data from the order every time the order is updated
  In Order, define a subtotal function that calculates the total price.
  console.log, then render the subtotal, every time the order is updated
-Order data
+
+ Order data
  Save the order data to your RESTful API when the order is submitted
-Hey Mikey, I Think He Likes It Mode
+
+ Hey Mikey, I Think He Likes It Mode
  Create another view that gives the owner the ability to view the orders and "complete" them.
+
+
+ Okay, let's figure out components...
+ MenuItem
+ MenuList (calls MenuItem)
+ Order
+
+ So those are what's required...
+ Let's consider...
+
+ |-----------------------------------------|
+ |    VIC'S PIZZA                    |check|
+ |  |----------------------------|   | out |
+ |  | item....price              |   ------|
+ |  | item....price              |    Sub: |
+ |  | item....price              |         |
+ |  | item....price              |         |
+ |  ------------------------------         |
+ |_________________________________________|
+
+ If check out selected, menu and check out screens should swap places...
+
+ |-----------------------------------------|
+ |    VIC'S PIZZA                    |back2|
+ |  |----------------------------|   |menu |
+ |  | order item..qty..price     |   ------|
+ |  | order item..qty..price     |         |
+ |  | order item..qty..price     |         |
+ |  | Subtotal: $  |placeOrder|  |         |
+ |  ------------------------------         |
+ |_________________________________________|
 
 */
