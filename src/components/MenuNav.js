@@ -9,7 +9,7 @@ function MenuNav(props){
         value={category} setSelection={props.setSelection} selection={props.selection}/>);
     
     return(
-        <div className="nav-buttons">
+        <div className="nav-button-div">
             {menuButtonHTML}
         </div>
     )

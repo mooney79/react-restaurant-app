@@ -16,7 +16,7 @@ function MenuButtons(props){
     return(
 
         <>
-            <button type="button" key={props.value} onClick={handleClick2}>{props.value} </button>
+            <button className="nav-button" type="button" key={props.value} onClick={handleClick2}>{props.value} </button>
         </>
     )
 

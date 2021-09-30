@@ -8,6 +8,8 @@ import './App.css';
 
 function App() {
   const [selection, setSelection] = useState('all');
+  const [subtotal, setSubtotal] = useState(0);
+  const [order, setOrder] = useState([]);
 
   return (
     <div className="App">
@@ -29,7 +31,6 @@ export default App;
 Getting Started (Thinking in React: Mock + Step 1)
      Produce a functional static mockup 
 
-
  Order view
  Define an Order component
  Render an instance of Order component
@@ -49,14 +50,6 @@ Getting Started (Thinking in React: Mock + Step 1)
  Hey Mikey, I Think He Likes It Mode
  Create another view that gives the owner the ability to view the orders and "complete" them.
 
-
- Okay, let's figure out components...
- MenuItem
- MenuList (calls MenuItem)
- Order
-
- So those are what's required...
- Let's consider...
 
  |-----------------------------------------|
  |    VIC'S PIZZA                    |check|

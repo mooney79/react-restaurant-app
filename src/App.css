@@ -36,6 +36,7 @@ h1::before{
   background-color: rgb(255, 255, 255, 0.9);
   border: 1px solid black;
   width: 33%;
+  float: right;
 }
 
 li{
@@ -67,15 +68,31 @@ span{
   transform: translateY(-33%);
 }
 
-.nav-buttons{
+.nav-button-div{
   width: 15%;
   height: 8vh;
   font-size: 20px;
   font-weight: bold;
   padding: 16px;
   background: none;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
+.nav-button{
+  width: 50%;
+  height: 2vh;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px;
+  background-color: rgb(255, 255, 255, 0.6);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.fas{
+  font-size: 40px;
+}
 
 /* .App {
   text-align: center;
