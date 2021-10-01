@@ -1,7 +1,9 @@
+// import Order from "./Order";
 
 function MenuItem(props){
     function handleClick(event){
-        console.log(props);
+        const newOrderItem = {name: props.name, priceStr: props.priceStr, priceCents: props.priceCents, category: props.category};
+        props.setOrder([...props.order, newOrderItem]);
     }
     return (
         <li>
@@ -19,6 +21,8 @@ function MenuItem(props){
 
 export default MenuItem;
 
-//Add ability to sort by Categories
-//Buttons across the top?
-//Let's look.
+//Putting the same item in twice creates two of the same key, since key is based off name
+//So I need to add a quantity aspect as well.
+//Crapstick.
+//I was hoping to avoid that.  Still, it's more professional.
+

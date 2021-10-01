@@ -29,6 +29,7 @@ h1::before{
   width: 40%;
   margin-left: 10%;
   padding: 8px;
+  height: 42%;
   
 }
 
@@ -37,6 +38,7 @@ h1::before{
   border: 1px solid black;
   width: 33%;
   float: right;
+  
 }
 
 li{

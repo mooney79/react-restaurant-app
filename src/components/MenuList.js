@@ -7,12 +7,12 @@ function MenuList(props){
     let MenuHTML;
     let shownItems=[{}];
     if (props.selection === "all"){
-        MenuHTML = props.Menu.map(food => <MenuItem key={food.name} {...food} />);
+        MenuHTML = props.Menu.map(food => <MenuItem key={food.name} {...food} order={props.order} setOrder={props.setOrder}/>);
     } 
     else {
         shownItems = props.Menu.filter(food => props.selection === food.category);
 
-        MenuHTML = shownItems.map(shownItem => <MenuItem key={shownItem.name} {...shownItem}/>);
+        MenuHTML = shownItems.map(shownItem => <MenuItem key={shownItem.name} {...shownItem} order={props.order} setOrder={props.setOrder}/>);
     }
 
     return (

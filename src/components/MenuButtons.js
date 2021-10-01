@@ -6,10 +6,8 @@ function MenuButtons(props){
     function handleClick2(event){
         if (props.selection === props.value){
             props.setSelection('all');
-            console.log(props.selection, props.value);
         } else {
             props.setSelection(props.value);
-            console.log(props.selection, props.value);
         }
     }
 

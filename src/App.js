@@ -1,8 +1,10 @@
-import {useState/*, useEffect*/} from 'react'
+import {useEffect, useState} from 'react'
 import MenuList from './components/MenuList';
 import MenuNav from './components/MenuNav';
 import Order from './components/Order';
-import {Menu} from './components/Menu';
+import {Menu} from './utilities/Menu';
+import OrderForm from './components/OrderForm';
+import MenuPreview from './components/MenuPreview';
 
 import './App.css';    
 
@@ -10,16 +12,40 @@ function App() {
   const [selection, setSelection] = useState('all');
   const [subtotal, setSubtotal] = useState(0);
   const [order, setOrder] = useState([]);
+  const [checkout, setCheckout] = useState(false);
+
+
+  useEffect(() => {
+    let orderSubtotal = 0;
+    for (let i=0; i < order.length; i++) {
+      orderSubtotal += order[i].priceCents;
+    }
+    setSubtotal(orderSubtotal);
+  }, [order]);
+
+  let mainpane;
+  let sidepane;
+  let navpane;
+  if (!checkout) {
+      mainpane = <MenuList Menu={Menu} selection={selection} order={order} setOrder={setOrder}/>
+      navpane =  <MenuNav Menu={Menu} selection={selection} setSelection={setSelection}/>
+      sidepane = <Order order={order} subtotal={subtotal} setOrder={setOrder} setCheckout={setCheckout}/>
+      
+  } else {
+      mainpane = <OrderForm order={order} subtotal={subtotal} setOrder={setOrder} setCheckout={setCheckout}/>
+      navpane = null;
+      sidepane = <MenuPreview />
+  }
 
   return (
     <div className="App">
        <header>          
           <h1>Mr. Fancy's Pizza</h1>          
        </header>
-      
-       <MenuList Menu={Menu} selection={selection}/>
-       <MenuNav Menu={Menu} selection={selection} setSelection={setSelection}/>
-       <Order />
+      {mainpane}
+      {navpane}
+      {sidepane}
+       
     </div>
   );
 }
@@ -31,21 +57,6 @@ export default App;
 Getting Started (Thinking in React: Mock + Step 1)
      Produce a functional static mockup 
 
- Order view
- Define an Order component
- Render an instance of Order component
- Define an order object in your application state
- Pass the order to the Order component
- console.log the order when I click on the foods price
- Add the food object to the order
- In Order, console.log the order
- In Order, console.log a menu item every time it is added to the order
- Render the data from the order every time the order is updated
- In Order, define a subtotal function that calculates the total price.
- console.log, then render the subtotal, every time the order is updated
-
- Order data
- Save the order data to your RESTful API when the order is submitted
 
  Hey Mikey, I Think He Likes It Mode
  Create another view that gives the owner the ability to view the orders and "complete" them.

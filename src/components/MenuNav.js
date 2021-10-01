@@ -1,6 +1,6 @@
 // import {useState} from 'react';
 import MenuNavButton from './MenuButtons';
-import {Menu} from './Menu';
+import {Menu} from '../utilities/Menu';
 
 function MenuNav(props){
     const categories = Menu.map(category => category.category);
