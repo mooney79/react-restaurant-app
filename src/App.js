@@ -5,6 +5,8 @@ import Order from './components/Order';
 import {Menu} from './utilities/Menu';
 import OrderForm from './components/OrderForm';
 import MenuPreview from './components/MenuPreview';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import logo2 from './images/logo.png';
 
 import './App.css';    
 
@@ -27,24 +29,29 @@ function App() {
   let sidepane;
   let navpane;
   if (!checkout) {
+      navpane =  <MenuNav Menu={Menu} selection={selection} setSelection={setSelection}/>  
       mainpane = <MenuList Menu={Menu} selection={selection} order={order} setOrder={setOrder}/>
-      navpane =  <MenuNav Menu={Menu} selection={selection} setSelection={setSelection}/>
-      sidepane = <Order order={order} subtotal={subtotal} setOrder={setOrder} setCheckout={setCheckout}/>
-      
+      sidepane = <Order order={order} subtotal={subtotal} setOrder={setOrder} setCheckout={setCheckout}/>      
   } else {
       mainpane = <OrderForm order={order} subtotal={subtotal} setOrder={setOrder} setCheckout={setCheckout}/>
       navpane = null;
-      sidepane = <MenuPreview />
+      sidepane = <MenuPreview setCheckout={setCheckout}/>
   }
 
   return (
     <div className="App">
-       <header>          
-          <h1>Mr. Fancy's Pizza</h1>          
-       </header>
-      {mainpane}
-      {navpane}
-      {sidepane}
+
+       <header>
+         <div className="wrap">
+           <img src={logo2} alt='logo' className="logo" />           
+          <h1>Mr. Fancy's Pizza</h1>
+         </div>
+          {sidepane}
+      </header>
+      <div className="testcontainer">
+        {mainpane}
+        {navpane}
+      </div>
        
     </div>
   );

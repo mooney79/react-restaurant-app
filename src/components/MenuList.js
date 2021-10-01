@@ -16,7 +16,7 @@ function MenuList(props){
     }
 
     return (
-        <ul className="menu">
+        <ul className="mainpane">
                 {MenuHTML}
         </ul>
     )

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import OrderItem from "./OrderItem";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 function OrderForm(props){
 
@@ -50,20 +52,21 @@ async function submitOrder(customer, order) {
 
    return(
      <>
-     <form onSubmit={handleSubmit}>
+     <Form onSubmit={handleSubmit} className="mainpane solitarymain">
           <input name="firstName" type="text" id="firstName" value={state.firstName} onChange={handleChange} autoComplete="off" placeholder="First Name"/>
           <input name="lastName" type="text" id="lastName" value={state.lastName} onChange={handleChange} autoComplete="off" placeholder="Last Name"/>
           <input name="address" type="text" id="address" value={state.address} onChange={handleChange} autoComplete="off" placeholder="123 Placeholder St"/>
           <input name="city" type="text" id="city" value={state.city} onChange={handleChange} autoComplete="off" placeholder="City"/>
           <input name="state" type="text" id="state" value={state.state} onChange={handleChange} autoComplete="off" placeholder="State"/>
-          <input name="zip" type="text" id="zip" value={state.zip} onChange={handleChange} autoComplete="off" placeholder="Zip Code"/>
+          <input name="zip" type="text" id="zip" value={state.zip} onChange={handleChange} autoComplete="off" placeholder="Zip"/>
           {orderHTML}
-          <p> <span>Subtotal:</span>&nbsp; ${props.subtotal/100}</p>
-          
-
-
-          <button type="submit">Submit Order</button>
-    </form>
+          <div className="subtotal">
+              <div className="vert">
+                    <p> <span>Subtotal:</span>&nbsp; ${props.subtotal/100}</p><br />
+                    <Button type="submit" variant="primary" className="form-button">Submit Order</Button>
+               </div>
+          </div>
+    </Form>
     
      </>
    )

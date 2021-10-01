@@ -8,37 +8,83 @@
   /* object-fit: scale-down; */
   background-size: cover; 
 }
+header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 h1 {
   background-color: rgb(255, 255, 255, 0.7);
-  border-bottom: solid black 2px;
-  padding-bottom: 16px;
+  border-bottom: solid black 3px;
+  padding-bottom: -5%;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Chango', cursive;
+  padding-left: 25%;
+  padding-top: 32px;
+  width: 100%;
+  margin-bottom: -5%;
+  align-items: flex-start;
+  max-height: 15vh;
+  text-shadow: 2px 5px orange;
+  
 }
 
-h1::before{
+
+.logo{
+  height: 100%;
+  width: auto;
+  position: absolute;
+  left: 5%;
+  /* top: -75%;
+  left: -10%; */
+
+}
+
+.wrap{
+  width: 100%;
+  display: flex;
+  position: relative;
+  /* background-image: url("/src/images/logo.png");
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-origin: padding-box; */
+}
+
+/* h1::before{
   content: '';
   display: inline-block;
   background-image: url("/src/images/logo.png");
   background-size:contain;
-  width: 8vh;
-  height: 8vh;
-}
+  width: 16vh;
+  /* height: 16vh; 
+  transform: translateY(35%);
+} */
 
-.menu{
+.mainpane{
   background-color: rgb(255, 255, 255, 0.7);
-  width: 40%;
-  margin-left: 10%;
+  width: 70%;
+  margin-left: 1%;
   padding: 8px;
-  height: 42%;
-  
+  margin-top: 16px;
+  /* height: 42%; */  
 }
 
-.order{
+.solitarymain{
+  margin-left: 15%;
+}
+
+.sidepane{
   background-color: rgb(255, 255, 255, 0.9);
-  border: 1px solid black;
-  width: 33%;
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  width: 30%;
   float: right;
-  
+  /* margin-right: 10%; */
+  clear: both;
+  height: 20vh;  
 }
 
 li{
@@ -71,31 +117,85 @@ span{
 }
 
 .nav-button-div{
-  width: 15%;
-  height: 8vh;
-  font-size: 20px;
+  width: 10%;
   font-weight: bold;
-  padding: 16px;
   background: none;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-top: 16px;
 }
 
 .nav-button{
-  width: 50%;
-  height: 2vh;
+  /* width: 50%; */
+  /* height: 2vh; */
   font-size: 16px;
   font-weight: bold;
   padding: 16px;
   background-color: rgb(255, 255, 255, 0.6);
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .fas{
   font-size: 40px;
 }
 
+#firstName{
+  width: 50%;
+}
+
+#lastName{
+  width: 50%;
+}
+
+#address{
+  width: 100%;
+}
+
+#city{
+  width:75%;
+  margin-bottom: 16px;
+}
+#state{
+  width: 15%;
+}
+#zip{
+  width: 10%;
+}
+
+.form-button{
+  text-align: center;
+}
+
+.subtotal{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.vert{
+  flex-direction: column;
+}
+
+.testcontainer{
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.back-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* .back-button{
+  justify-content: center;
+  align-self: center;
+} */
 /* .App {
   text-align: center;
 }
