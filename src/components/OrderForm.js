@@ -15,7 +15,7 @@ function OrderForm(props){
     })
 
     let customer;
-    const orderHTML = props.order.map(food => <OrderItem key={food.name} {...food} order={props.order} setOrder={props.setOrder}/>);
+    const orderHTML = props.order.map(food => <OrderItem key={/*food.name*/Math.floor(Math.random() * 10000)} {...food} order={props.order} setOrder={props.setOrder}/>);
 
     function handleSubmit(event){
       event.preventDefault();
