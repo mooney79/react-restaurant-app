@@ -37,7 +37,7 @@ function OrderForm(props){
 
 async function submitOrder(customer, order) {
   const newOrder = {customer, order};
-  const response = await fetch(`http://tiny-taco-server.herokuapp.com/fancy-restaurant/`,{
+  const response = await fetch(`https://django-restaurant-api-mooney79.herokuapp.com/api_v1/orders/`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

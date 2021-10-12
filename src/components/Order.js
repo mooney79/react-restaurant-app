@@ -1,4 +1,4 @@
-import OrderItem from "./OrderItem";
+// import OrderItem from "./OrderItem";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
@@ -17,27 +17,3 @@ function Order(props){
 }
 
 export default Order;
-
-//Do I increment reproduced orders, or just look for repeats?
-
-//What do I want to show in "preview mode?"
-/*
-Total number of items in your order (a la ToDo list)...
-Running subtotal, updated every time it changes (useEffect?) useState?
-Depends, I guess, on whether Orderitems is the state and subtotal is a side
-effect, or if they're both examples of state...
-"Checkout Button"
-Button swaps views -- Menu gets previewed in side pane instead.
-Main view becomes primary "order" form, complete with list of items, 
-subtotal...
-Then a form to enter address (for delivery)
-and a submit button.
-
-I almost feel like I build the main orderform in the same component as the MenuList
-and the Menu preview in this component, that way I only have to style them each
-once for position.
-
-Yep, let's try that.
-
-
-*/
